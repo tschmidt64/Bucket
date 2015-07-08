@@ -12,3 +12,4 @@ StatusBarIOS.setStyle(1);
 var BucketNew = require('./App/BucketApp.js');
 
 AppRegistry.registerComponent('BucketNew', () => BucketNew);
+
