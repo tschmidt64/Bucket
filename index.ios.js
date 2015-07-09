@@ -7,7 +7,7 @@ var {
   StatusBarIOS,
 } = React;
 
-StatusBarIOS.setStyle(1);
+StatusBarIOS.setStyle(0);
 
 var BucketNew = require('./App/BucketApp.js');
 

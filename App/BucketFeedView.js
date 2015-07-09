@@ -9,30 +9,37 @@ var {
   NavigatorIOS,
 } = React;
 
-
-class BucketFeedView extends React.Component {
+class RandomView2 extends React.Component {
   constructor() {
     super();
   }
 
   render() {
     return (
-    <View style={styles.container}>
-      <Text style={styles.innerText}> FEED VIEW </Text>
-    </View>
+    <View style={styles.one}>
+        
+      <View style={styles.two}>
+      <Text> hello world </Text>
+      </View>
+
+    </View> 
     );
   }
 }
 
 var styles = StyleSheet.create({
-  container: {
+  one: {
     flex: 1,
-    paddingTop: 64,
+    backgroundColor: 'green',
+    top: 64,
+    marginBottom: 114,
   },
-  innerText: {
-    color: 'white',
-    fontSize: 50
-  }
+  two: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: '#FF0000',
+  },
 });
 
-module.exports = BucketFeedView;
+module.exports = RandomView2;

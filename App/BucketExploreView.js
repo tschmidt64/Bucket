@@ -9,7 +9,6 @@ var {
   NavigatorIOS,
 } = React;
 
-
 class BucketExploreView extends React.Component {
   constructor() {
     super();
@@ -17,29 +16,29 @@ class BucketExploreView extends React.Component {
 
   render() {
     return (
-    <View>
-    <View style={styles.container}>
-    </View>
-    <View style={styles.bottom}>
-      <Text style={styles.innerText}> EXPLORE VIEW </Text>
-    </View>
-    </View>
+    <View style={styles.one}>
+        
+      <View style={styles.two}>
+      <Text> hello world </Text>
+      </View>
+
+    </View> 
     );
   }
 }
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 0.5,
-    paddingTop: 64,
+  one: {
+    flex: 1,
+    backgroundColor: 'orange',
+    top: 64,
+    marginBottom: 114,
   },
-  bottom: {
-    flex: 0.5
+  two: {
+    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: '#FF0000',
   },
-  innerText: {
-    color: 'white',
-    fontSize: 50
-  }
 });
 
 module.exports = BucketExploreView;

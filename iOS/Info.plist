@@ -36,6 +36,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome.tff</string>
+		<string>Foundation.tff</string>
+		<string>Ionicons.tff</string>
+		<string>EvilIcons.tff</string>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 </dict>

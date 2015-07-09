@@ -8,8 +8,8 @@ var {
   TabBarIOS,
 } = React;
 
-var BucketExploreView = require('./BucketExploreView')
-var BucketFeedView = require('./BucketFeedView')
+var BucketExploreNavigator = require('./BucketExploreNavigator')
+var BucketFeedNavigator = require('./BucketFeedNavigator')
 
 class BucketTabBar extends React.Component {
   constructor() {
@@ -23,24 +23,25 @@ class BucketTabBar extends React.Component {
   render() {
     return (
       <TabBarIOS
-        barTintColor='black'
-        tintColor='rgba(255, 0, 0, 0.7)'>
+        barTintColor='#89E5FF'
+        tintColor='rgba(0, 0, 0, 0.8)'
+      >
         <TabBarIOS.Item
           systemIcon='downloads'
-          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
           selected={this.state.selectedTab === 'exploreTab'}
           onPress={() => {
             this.setState({
               selectedTab: 'exploreTab',
             });
-          }}>
+          }}
+          style={styles.tabBar}
+        >
           <View style={styles.tabContent}>
-            <BucketExploreView/>
+            <BucketExploreNavigator/>
           </View>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon="history"
-          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
           selected={this.state.selectedTab === 'feedTab'}
           onPress={() => {
             this.setState({
@@ -48,7 +49,7 @@ class BucketTabBar extends React.Component {
             });
           }}>
           <View style={styles.tabContent}>
-            <BucketFeedView/>
+            <BucketFeedNavigator/>
           </View>
         </TabBarIOS.Item>
       </TabBarIOS>
@@ -59,9 +60,9 @@ class BucketTabBar extends React.Component {
 var styles = StyleSheet.create({
   tabContent: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'black'
+    alignItems: 'stretch'
   },
+
 });
 
 module.exports = BucketTabBar;
