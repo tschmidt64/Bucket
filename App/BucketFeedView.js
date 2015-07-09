@@ -35,10 +35,9 @@ var styles = StyleSheet.create({
     marginBottom: 114,
   },
   two: {
-    alignSelf: 'center',
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: '#FF0000',
+    backgroundColor: 'blue',
   },
 });
 

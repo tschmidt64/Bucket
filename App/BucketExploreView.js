@@ -37,7 +37,7 @@ var styles = StyleSheet.create({
   two: {
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: '#FF0000',
+    backgroundColor: 'red',
   },
 });
 
