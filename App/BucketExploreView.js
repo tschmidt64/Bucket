@@ -32,7 +32,7 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'orange',
     top: 64,
-    marginBottom: 114,
+    paddingBottom: 113,
   },
   two: {
     justifyContent: 'center',
