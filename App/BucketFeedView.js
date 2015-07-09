@@ -9,7 +9,7 @@ var {
   NavigatorIOS,
 } = React;
 
-class RandomView2 extends React.Component {
+class BucketFeedView extends React.Component {
   constructor() {
     super();
   }
@@ -41,4 +41,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = RandomView2;
+module.exports = BucketFeedView;
