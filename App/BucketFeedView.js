@@ -17,12 +17,12 @@ class BucketFeedView extends React.Component {
   render() {
     return (
     <View style={styles.one}>
-        
+
       <View style={styles.two}>
       <Text> hello world </Text>
       </View>
 
-    </View> 
+    </View>
     );
   }
 }
@@ -37,7 +37,6 @@ var styles = StyleSheet.create({
   two: {
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: 'blue',
   },
 });
 
