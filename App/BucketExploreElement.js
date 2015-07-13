@@ -28,13 +28,10 @@ class BucketExploreElement extends React.Component {
 
 var styles = StyleSheet.create({
   item: {
-    flex: 1,
-    flexDirection: 'row',
     backgroundColor: 'rgba(255, 255, 255, 0.4)'
   },
   photo: {
-    flex: 1,
-    height: 200,
+    height: 500,
     justifyContent: 'center',
     alignItems: 'center'
   },
