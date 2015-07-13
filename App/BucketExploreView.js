@@ -34,6 +34,7 @@ class BucketExploreView extends React.Component {
           dataSource={this.state.dataSource}
           renderRow={this._renderRow}
           automaticallyAdjustContentInsets={false}
+          contentInset={{bottom:49}}
         />
 
 
