@@ -23,8 +23,8 @@ class BucketTabBar extends React.Component {
   render() {
     return (
       <TabBarIOS
-        barTintColor='#20BF5A'
-        tintColor='rgba(0, 0, 0, 0.8)' >
+        barTintColor='#000000'
+        tintColor='#FFFFFF'>
         <TabBarIOS.Item
           systemIcon='downloads'
           selected={this.state.selectedTab === 'exploreTab'}

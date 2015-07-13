@@ -48,8 +48,9 @@ class BucketExploreNavigator extends React.Component {
           component: BucketExploreView,
           navigationBar: <NavigationBar
             title='Explore'
-            backgroundColor='#20BF5A'
-            buttonsColor='rgba(0, 0, 0, 0.8)'/>
+            titleColor='#FFFFFF'
+            backgroundColor='#000000'
+            buttonsColor='#FFFFFF'/>
         }}
       />
     );
@@ -60,7 +61,7 @@ class BucketExploreNavigator extends React.Component {
 var styles = StyleSheet.create({
   navigator: {
     flex: 1,
-    backgroundColor: '#167F3C'
+    backgroundColor: 'black'
   },
 });
 

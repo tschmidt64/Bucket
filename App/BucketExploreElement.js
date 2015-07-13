@@ -23,7 +23,7 @@ class BucketExploreElement extends React.Component {
       component: BucketFeedView,
       navigationBar: <NavigationBar
         title='Feed'
-        backgroundColor='#20BF5A'
+        backgroundColor='#000000'
         buttonsColor='rgba(0, 0, 0, 0.8)'/>
     });
   }
