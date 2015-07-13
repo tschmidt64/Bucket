@@ -16,11 +16,7 @@ class BucketApp extends React.Component {
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <BucketTabBar/>
-      </View>
-    );
+    return ( <BucketTabBar style={styles.container}/> );
   }
 }
 

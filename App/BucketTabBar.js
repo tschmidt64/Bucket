@@ -35,7 +35,9 @@ class BucketTabBar extends React.Component {
             });
           }}
         >
-        <BucketExploreNavigator/>
+          <View style={styles.tabContent}>
+            <BucketExploreNavigator/>
+          </View>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon="history"
@@ -45,7 +47,9 @@ class BucketTabBar extends React.Component {
               selectedTab: 'feedTab',
             });
           }}>
-          <BucketFeedNavigator/>
+          <View style={styles.tabContent}>
+            <BucketFeedNavigator/>
+          </View>
         </TabBarIOS.Item>
       </TabBarIOS>
     );

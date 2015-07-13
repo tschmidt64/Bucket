@@ -45,12 +45,12 @@ class BucketExploreNavigator extends React.Component {
     return (
       <Navigator
         renderScene={this.renderScene}
+        sceneStyle={this.scene}
         initialRoute={{
           component: BucketExploreView,
           navigationBar: <NavigationBar
             title='Explore'
             onNext={this.handleNext}
-            style={styles.navigator}
           />
         }}
       />
@@ -60,6 +60,13 @@ class BucketExploreNavigator extends React.Component {
 
 
 var styles = StyleSheet.create({
+  scene: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0
+  },
   navigator: {
     flex: 1,
   },
