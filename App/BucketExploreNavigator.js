@@ -15,10 +15,9 @@ var BucketExploreView = require('./BucketExploreView')
 class BucketExploreNavigator extends React.Component {
   constructor() {
     super()
-    this.renderScene = this.renderScene.bind(this)
-    this.handleNext = this.handleNext.bind(this)
+    this._renderScene = this._renderScene.bind(this)
   }
-  renderScene(route, navigator) {
+  _renderScene(route, navigator) {
     var Component = route.component;
     var navBar = route.navigationBar;
 
@@ -30,28 +29,27 @@ class BucketExploreNavigator extends React.Component {
     }
 
     return (
-      <View style={styles.navigator}>
+      <View
+      style={styles.navigator}
+      navigator={navigator} >
         {navBar}
-        <BucketExploreView navigator={navigator} route={route} />
+        <route.component navigator={navigator} route={route} />
       </View>
     );
-  }
-
-  handleNext() {
-    alert('Next button click handler');
   }
 
   render() {
     return (
       <Navigator
-        renderScene={this.renderScene}
-        sceneStyle={this.scene}
+        ref='ExploreNavigator'
+        renderScene={this._renderScene}
+        navigator={this.props.navigator}
         initialRoute={{
           component: BucketExploreView,
           navigationBar: <NavigationBar
             title='Explore'
-            onNext={this.handleNext}
-          />
+            backgroundColor='#20BF5A'
+            buttonsColor='rgba(0, 0, 0, 0.8)'/>
         }}
       />
     );
@@ -60,15 +58,9 @@ class BucketExploreNavigator extends React.Component {
 
 
 var styles = StyleSheet.create({
-  scene: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    bottom: 0,
-    right: 0
-  },
   navigator: {
     flex: 1,
+    backgroundColor: '#167F3C'
   },
 });
 

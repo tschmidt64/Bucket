@@ -5,23 +5,42 @@ var {
   StyleSheet,
   View,
   Text,
+  TouchableHighlight,
   Image
 } = React;
 
+var BucketFeedView = require('./BucketFeedView')
+var NavigationBar = require('react-native-navbar')
+
 class BucketExploreElement extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this._onPressedListItem = this._onPressedListItem.bind(this)
+  }
+
+  _onPressedListItem() {
+    this.props.navigator.push({
+      component: BucketFeedView,
+      navigationBar: <NavigationBar
+        title='Feed'
+        backgroundColor='#20BF5A'
+        buttonsColor='rgba(0, 0, 0, 0.8)'/>
+    });
   }
 
   render() {
     return (
-      <View style={styles.item}>
+      <TouchableHighlight
+      style={styles.item}
+      activeOpacity='.9'
+      underlayColor='green'
+      onPress={this._onPressedListItem} >
         <Image
           source={{uri: this.props.img}}
           style={styles.photo} >
           <Text style={styles.text}>{this.props.title}</Text>
         </Image>
-      </View>
+      </TouchableHighlight>
     )
   }
 }

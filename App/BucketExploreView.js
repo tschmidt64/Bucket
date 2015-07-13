@@ -13,10 +13,11 @@ var BucketExploreElement = require('./BucketExploreElement')
 
 
 class BucketExploreView extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = { dataSource: this.ds.cloneWithRows(events) }
+    this._renderRow = this._renderRow.bind(this)
   }
 
   _renderRow(rowData) {
@@ -24,20 +25,18 @@ class BucketExploreView extends React.Component {
       <BucketExploreElement
         stle={styles.listView}
         title={rowData.title}
-        img={rowData.img} />
+        img={rowData.img}
+        navigator={this.props.navigator}/>
     )
   }
   render() {
     return (
-
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderRow}
           automaticallyAdjustContentInsets={false}
           contentInset={{bottom:49}}
-        />
-
-
+          navigator={this.props.navigator} />
     );
   }
 }
