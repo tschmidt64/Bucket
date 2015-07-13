@@ -23,7 +23,7 @@ class BucketTabBar extends React.Component {
   render() {
     return (
       <TabBarIOS
-        barTintColor='#89E5FF'
+        barTintColor='#40FF80'
         tintColor='rgba(0, 0, 0, 0.8)'
       >
         <TabBarIOS.Item
@@ -34,11 +34,8 @@ class BucketTabBar extends React.Component {
               selectedTab: 'exploreTab',
             });
           }}
-          style={styles.tabBar}
         >
-          <View style={styles.tabContent}>
-            <BucketExploreNavigator/>
-          </View>
+        <BucketExploreNavigator/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon="history"
@@ -48,9 +45,7 @@ class BucketTabBar extends React.Component {
               selectedTab: 'feedTab',
             });
           }}>
-          <View style={styles.tabContent}>
-            <BucketFeedNavigator/>
-          </View>
+          <BucketFeedNavigator/>
         </TabBarIOS.Item>
       </TabBarIOS>
     );
@@ -60,7 +55,6 @@ class BucketTabBar extends React.Component {
 var styles = StyleSheet.create({
   tabContent: {
     flex: 1,
-    alignItems: 'stretch'
   },
 
 });

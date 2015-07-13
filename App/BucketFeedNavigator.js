@@ -6,37 +6,61 @@ var {
   Text,
   View,
   TabBarIOS,
-  NavigatorIOS,
+  Navigator,
 } = React;
 
+var NavigationBar = require('react-native-navbar')
 var BucketFeedView = require('./BucketFeedView')
 
 class BucketFeedNavigator extends React.Component {
   constructor() {
-    super();
+    super()
+    this.renderScene = this.renderScene.bind(this)
+    this.handleNext = this.handleNext.bind(this)
+  }
+  renderScene(route, navigator) {
+    var Component = route.component;
+    var navBar = route.navigationBar;
+
+    if (navBar) {
+      navBar = React.addons.cloneWithProps(navBar, {
+        navigator: navigator,
+        route: route
+      });
+    }
+
+    return (
+      <View style={styles.navigator}>
+        {navBar}
+        <BucketFeedView navigator={navigator} route={route} />
+      </View>
+    );
+  }
+
+  handleNext() {
+    alert('Next button click handler');
   }
 
   render() {
     return (
-      <View style={styles.navContainer}>
-        <NavigatorIOS
-          barTintColor='#89E5FF'
-          titleTextColor='rgba(0, 0, 0, 0.8)'
-          style={styles.nav}
-          initialRoute={{
-            title: 'Feed',
-            component: BucketFeedView,
-          }} />
-      </View>
+      <Navigator
+        renderScene={this.renderScene}
+        initialRoute={{
+          component: BucketFeedView,
+          navigationBar: <NavigationBar
+            title='Feed'
+            onNext={this.handleNext}
+            style={styles.navigator}
+          />
+        }}
+      />
     );
   }
 }
 
+
 var styles = StyleSheet.create({
-  nav: {
-    flex: 1,
-  },
-  navContainer: {
+  navigator: {
     flex: 1,
   },
 });

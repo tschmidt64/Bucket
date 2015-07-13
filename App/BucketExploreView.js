@@ -29,30 +29,19 @@ class BucketExploreView extends React.Component {
   }
   render() {
     return (
-    <View style={styles.one}>
 
-      <View style={styles.two}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderRow}
         />
-      </View>
 
 
-    </View>
     );
   }
 }
 
 var styles = StyleSheet.create({
-  one: {
-    flex: 1,
-  },
-  two: {
-    flex: 1,
-  },
   listView: {
-    flex: 1,
     alignItems: 'stretch'
   }
 });
